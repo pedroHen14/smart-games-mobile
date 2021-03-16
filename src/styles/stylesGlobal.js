@@ -32,7 +32,7 @@ export const ToolBar = styled.View`
 export const TextToolBar = styled(TextDefault)`
   flex: 1;
   font-size: 20px;
-  color: ${colors.light};
+  color: ${colors.secondary};
   font-weight: bold;
   text-align: center;
 `;

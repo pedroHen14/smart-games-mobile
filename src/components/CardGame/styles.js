@@ -38,15 +38,7 @@ export const TextTitle = styled(TextDefault)`
 
 export const TextInfoPrice = styled(TextDefault)`
   padding: 8px;
-
-  border-left-width: 2px;
-  border-left-color: ${colors.primary};
-  color: black;
-`;
-
-export const TextInfoDeveloper = styled(TextDefault)`
-  padding: 8px;
-
+  font-weight: bold;
   border-left-width: 2px;
   border-left-color: ${colors.primary};
   color: black;

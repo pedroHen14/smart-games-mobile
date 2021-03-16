@@ -1,7 +1,8 @@
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
-import { ActivityIndicator, StatusBar } from "react-native";
+import { StatusBar } from "react-native";
 import { TextDefault } from "../../styles/stylesGlobal";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export const Container = styled.View`
   flex: 1;
@@ -42,4 +43,9 @@ export const ImageLogo = styled.Image`
   border-width: 2px;
   border-color: ${colors.light};
   z-index: 9;
+`;
+
+export const IconCamera = styled(Icon)`
+  font-size: 30px;
+  color: ${colors.secondary};
 `;
