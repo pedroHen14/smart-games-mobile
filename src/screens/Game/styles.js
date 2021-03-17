@@ -100,6 +100,6 @@ export const TextInfoPrice = styled(TextDefault)`
 `;
 
 export const IconComeBack = styled(Icon)`
-  font-size: 40px;
+  font-size: 30px;
   color: ${colors.secondary};
 `;

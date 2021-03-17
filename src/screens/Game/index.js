@@ -28,10 +28,6 @@ function Game({ navigation }) {
 
   const [game, setGame] = useState([]);
 
-  const handleComeBack = () => {
-    navigation.navigate("Home");
-  };
-
   const handleOrder = async (price, gameId) => {
     try {
       const response = await api.post("/order", {
@@ -50,11 +46,13 @@ function Game({ navigation }) {
     }
   };
 
+  //Função que pega os dados armazenados no AsyncStorage e armazena na variável de estado
   const loadGame = async () => {
     const game = await getGame();
 
     setGame(game);
   };
+
   useEffect(() => {
     loadGame();
   }, []);
@@ -63,8 +61,8 @@ function Game({ navigation }) {
     <Container>
       <ToolBar>
         <TouchableOpacity
-          onPress={() => handleComeBack()}
-          style={{ position: "absolute", left: 15 }}
+          onPress={() => navigation.navigate("Home")}
+          style={{ position: "absolute", left: 15, zIndex: 99 }}
         >
           <IconComeBack name="chevron-circle-left" />
         </TouchableOpacity>
@@ -102,7 +100,9 @@ function Game({ navigation }) {
         <TextDescription>{game.description}</TextDescription>
       </ContentGame>
       <FooterGame>
-        <TextInfoPrice>R$ {game.price}0</TextInfoPrice>
+        <TextInfoPrice>
+          R$ {game.discount > 0 ? game.price - game.price / 10 : game.price}
+        </TextInfoPrice>
         <Button
           handlePress={() => handleOrder(game.price, game.id)}
           text={"Comprar"}

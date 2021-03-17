@@ -4,6 +4,21 @@ import { StatusBar } from "react-native";
 import { TextDefault } from "../../styles/stylesGlobal";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+export const ContainerCamera = styled.View`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9;
+  background-color: ${colors.dark};
+`;
+
+export const IconComeBack = styled(Icon)`
+  font-size: 30px;
+  color: ${colors.secondary};
+`;
+
 export const Container = styled.View`
   flex: 1;
   align-items: center;

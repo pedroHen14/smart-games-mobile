@@ -13,13 +13,13 @@ export const Container = styled.View`
 
 export const CardHeader = styled.View`
   flex-direction: row;
-
+  justify-content: center;
   align-items: center;
 `;
 
 export const ImageHeader = styled.Image`
-  width: 100%;
-  height: 200px;
+  width: 50%;
+  height: 300px;
   border-radius: 10px;
 `;
 
