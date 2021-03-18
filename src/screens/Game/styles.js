@@ -3,6 +3,15 @@ import colors from "../../styles/colors";
 import { TextDefault } from "../../styles/stylesGlobal";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+export const ContainerMap = styled.View`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9;
+`;
+
 export const HeaderGame = styled.View`
   width: 100%;
   flex: 3;

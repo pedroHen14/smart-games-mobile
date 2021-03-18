@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "smart-games-mobile",
+    "name": "Smart Games",
     "slug": "smart-games-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/hustle.png",
     "splash": {
       "image": "./assets/hustle.png",
       "resizeMode": "contain",
@@ -21,8 +21,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/hustle.png",
+        "backgroundColor": "#4f83cc"
       }
     },
     "web": {

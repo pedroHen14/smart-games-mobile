@@ -30,8 +30,6 @@ function Home({ navigation }) {
 
   const [openCamera, setOpenCamera] = useState(false);
 
-  const [hasPermission, setHasPermission] = useState(null);
-
   const [scanned, setScanned] = useState(false);
 
   const loadGames = async () => {
@@ -40,9 +38,8 @@ function Home({ navigation }) {
     setGames(response.data);
   };
 
-  const loadCodeScanner = async () => {
-    const { status } = await BarCodeScanner.requestPermissionsAsync();
-    setHasPermission(status === "granted");
+  const codeScannerPermission = async () => {
+    await BarCodeScanner.requestPermissionsAsync();
   };
 
   const handleBarCodeScanned = async ({ data }) => {
@@ -52,6 +49,7 @@ function Home({ navigation }) {
 
     const game = await api.get(`/games/${gameId}`);
 
+    //Tratando caso o produto já esteja com desconto
     if (game.data.discount == 0) {
       const response = await api.put(data);
 
@@ -77,21 +75,17 @@ function Home({ navigation }) {
   };
 
   const handleGame = async ({ id }) => {
-    try {
-      const response = await api.get(`/games/${id}`);
+    const response = await api.get(`/games/${id}`);
 
-      //Armazenando o jogo no AsyncStorage para transferir os valores para a outra página
-      gameIn(response.data);
+    //Armazenando o jogo no AsyncStorage para transferir os valores para a outra página
+    gameIn(response.data);
 
-      navigation.navigate("Game");
-    } catch (error) {
-      console.log(error);
-    }
+    navigation.navigate("Game");
   };
 
   useEffect(() => {
     loadGames();
-    loadCodeScanner();
+    codeScannerPermission();
   }, []);
 
   return (
