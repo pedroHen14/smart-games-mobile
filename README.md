@@ -22,7 +22,7 @@ $ cd "nome_pasta"
 
 - $ npm install
 
-- $ expo install
+- $ npm install expo-cli
 
 ### Abrir a aplicação no VSCode (caso não utilize esta IDE é só abrir normalmente na de sua preferência)
 
@@ -30,12 +30,14 @@ $ code .
 
 ### Abrir o arquivo "api.js" que está localizado na pasta "services"
 
-### Caso a esteja utilizando o seu próprio celular que está conectado na mesma rede do computador
+### Caso a esteja utilizando o seu próprio celular que está conectado na mesma rede do computador substitua o endereço que está digitado pelo IP da sua máquina
 
-### substitua o endereço que está digitado pelo IP da sua máquina, caso esteja utilizando um emulador
-
-### do Android Studio, pode deixar a URL da forma que está
+### Caso esteja utilizando um emulador do Android Studio, pode deixar a URL da forma que está
 
 ### Execultar a aplicação
 
-$ expo start
+$ npm start
+
+### Irá te direcionar para a página do expo, no canto inferior esquerdo terá o QRcode e as opções, selecione a opção "Tunel" e caso estiver com o seu celular, instale o aplicativo do expo e escaneie o QRcode. Se estiver utilizando o emulador, clique na opção "Run on Android device/emulator" 
+
+### Se tudo estiver certo, o aplicativo já estará funcionando corretamente no seu dispositivo.
