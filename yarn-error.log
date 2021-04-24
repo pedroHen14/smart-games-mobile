@@ -1,30 +1,20 @@
 Arguments: 
-  /snap/node/4150/bin/node /snap/node/4150/bin/yarn.js global dir
+  C:\Program Files\nodejs\node.exe C:\Users\pedro\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-gesture-handler@~1.10.2
 
 PATH: 
-  /snap/node/4150/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/pedro/smart-games-mobile/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\xampp\php;C:\Program Files\Java\jdk-11.0.8\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\pedro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\pedro\AppData\Roaming\npm;
 
 Yarn version: 
-  1.22.5
+  1.22.10
 
 Node version: 
-  14.16.1
+  14.16.0
 
 Platform: 
-  linux x64
+  win32 x64
 
 Trace: 
-  Error: EACCES: permission denied, write
-      at writeSync (fs.js:711:3)
-      at SyncWriteStream._write (internal/fs/sync_write_stream.js:24:3)
-      at writeOrBuffer (internal/streams/writable.js:358:12)
-      at SyncWriteStream.Writable.write (internal/streams/writable.js:303:10)
-      at ConsoleReporter._log (/snap/node/4150/lib/cli.js:96770:17)
-      at ConsoleReporter.log (/snap/node/4150/lib/cli.js:96758:10)
-      at dir (/snap/node/4150/lib/cli.js:36256:14)
-      at Object.<anonymous> (/snap/node/4150/lib/cli.js:25940:25)
-      at Generator.next (<anonymous>)
-      at step (/snap/node/4150/lib/cli.js:310:30)
+  Error: EPERM: operation not permitted, unlink 'C:\Users\pedro\Desktop\smart-games-mobile\node_modules\xdl\binaries\windows\adb\adb.exe'
 
 npm manifest: 
   {
@@ -37,7 +27,7 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
-      "@react-native-community/async-storage": "~1.12.0",
+      "@react-native-async-storage/async-storage": "^1.15.2",
       "@react-native-community/masked-view": "0.1.10",
       "@react-navigation/native": "^5.9.3",
       "@react-navigation/stack": "^5.14.3",
@@ -49,15 +39,15 @@ npm manifest:
       "react": "16.13.1",
       "react-dom": "16.13.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
-      "react-native-gesture-handler": "~1.8.0",
       "react-native-maps": "0.27.1",
       "react-native-reanimated": "~1.13.0",
-      "react-native-safe-area-context": "3.1.9",
+      "react-native-safe-area-context": "^3.2.0",
       "react-native-screens": "~2.15.2",
       "react-native-vector-icons": "^8.1.0",
       "react-native-web": "~0.13.12",
       "react-number-format": "^4.5.0",
-      "styled-components": "^5.2.1"
+      "styled-components": "^5.2.1",
+      "unimodules-permissions-interface": "^6.1.0"
     },
     "devDependencies": {
       "@babel/core": "~7.9.0"
@@ -2020,10 +2010,10 @@ Lockfile:
       native-url "^0.2.6"
       schema-utils "^2.6.5"
   
-  "@react-native-community/async-storage@~1.12.0":
-    version "1.12.1"
-    resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.12.1.tgz#25f821b4f6b13abe005ad67e47c6f1cee9f27b24"
-    integrity sha512-70WGaH3PKYASi4BThuEEKMkyAgE9k7VytBqmgPRx3MzJx9/MkspwqJGmn3QLCgHLIFUgF1pit2mWICbRJ3T3lg==
+  "@react-native-async-storage/async-storage@^1.15.2":
+    version "1.15.2"
+    resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.2.tgz#895898363fbb8f6db477629fd4ba0b013fe27484"
+    integrity sha512-E1SajKtyeLwi6JVfMZQx+I01z3ZvA0/O2e09EVFzU75YK0696S5N2CqeKlxAZQFVSvzh+Jfq0q412Kdkuh+l6A==
     dependencies:
       deep-assign "^3.0.0"
   
@@ -4378,6 +4368,13 @@ Lockfile:
       loose-envify "^1.3.1"
       object-assign "^4.1.1"
   
+  cross-fetch@^3.0.4:
+    version "3.1.4"
+    resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
+    integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
+    dependencies:
+      node-fetch "2.6.1"
+  
   cross-spawn@7.0.3:
     version "7.0.3"
     resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -5787,6 +5784,19 @@ Lockfile:
       core-js "^2.4.1"
       fbjs-css-vars "^1.0.0"
       isomorphic-fetch "^2.1.1"
+      loose-envify "^1.0.0"
+      object-assign "^4.1.0"
+      promise "^7.1.1"
+      setimmediate "^1.0.5"
+      ua-parser-js "^0.7.18"
+  
+  fbjs@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-3.0.0.tgz#0907067fb3f57a78f45d95f1eacffcacd623c165"
+    integrity sha512-dJd4PiDOFuhe7vk4F80Mba83Vr2QuK86FoxtgPmzBqEJahncp+13YCmfoa53KHCo6OnlXLG7eeMWPfB5CrpVKg==
+    dependencies:
+      cross-fetch "^3.0.4"
+      fbjs-css-vars "^1.0.0"
       loose-envify "^1.0.0"
       object-assign "^4.1.0"
       promise "^7.1.1"
@@ -8790,6 +8800,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/nocache/-/nocache-2.1.0.tgz#120c9ffec43b5729b1d5de88cd71aa75a0ba491f"
     integrity sha512-0L9FvHG3nfnnmaEQPjT9xhfN4ISk0A8/2j4M37Np4mcDesJjHgEUfgPhdCyZuFI954tjokaIj/A3NdpFNdEh4Q==
   
+  node-fetch@2.6.1, node-fetch@^2.2.0, node-fetch@^2.6.0:
+    version "2.6.1"
+    resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+    integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+  
   node-fetch@^1.0.1:
     version "1.7.3"
     resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
@@ -8797,11 +8812,6 @@ Lockfile:
     dependencies:
       encoding "^0.1.11"
       is-stream "^1.0.1"
-  
-  node-fetch@^2.2.0, node-fetch@^2.6.0:
-    version "2.6.1"
-    resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
-    integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
   
   node-forge@0.10.0, node-forge@^0.10.0:
     version "0.10.0"
@@ -10450,12 +10460,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
     integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
   
-  react-native-gesture-handler@~1.8.0:
-    version "1.8.0"
-    resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.8.0.tgz#18f61f51da50320f938957b0ee79bc58f47449dc"
-    integrity sha512-E2FZa0qZ5Bi0Z8Jg4n9DaFomHvedSjwbO2DPmUUHYRy1lH2yxXUpSrqJd6yymu+Efzmjg2+JZzsjFYA2Iq8VEQ==
+  react-native-gesture-handler@^1.10.3:
+    version "1.10.3"
+    resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
+    integrity sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw==
     dependencies:
       "@egjs/hammerjs" "^2.0.17"
+      fbjs "^3.0.0"
       hoist-non-react-statics "^3.3.0"
       invariant "^2.2.4"
       prop-types "^15.7.2"
@@ -10477,12 +10488,7 @@ Lockfile:
     dependencies:
       fbjs "^1.0.0"
   
-  react-native-safe-area-context@3.1.9:
-    version "3.1.9"
-    resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.1.9.tgz#48864ea976b0fa57142a2cc523e1fd3314e7247e"
-    integrity sha512-wmcGbdyE/vBSL5IjDPReoJUEqxkZsywZw5gPwsVUV1NBpw5eTIdnL6Y0uNKHE25Z661moxPHQz6kwAkYQyorxA==
-  
-  react-native-safe-area-context@3.2.0:
+  react-native-safe-area-context@3.2.0, react-native-safe-area-context@^3.2.0:
     version "3.2.0"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.2.0.tgz#06113c6b208f982d68ab5c3cebd199ca93db6941"
     integrity sha512-k2Nty4PwSnrg9HwrYeeE+EYqViYJoOFwEy9LxL5RIRfoqxAq/uQXNGwpUg2/u4gnKpBbEPa9eRh15KKMe/VHkA==
@@ -12357,6 +12363,11 @@ Lockfile:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz#dd57a99f6207bedff4628abefb94c50db941c8f4"
     integrity sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==
+  
+  unimodules-permissions-interface@^6.1.0:
+    version "6.1.0"
+    resolved "https://registry.yarnpkg.com/unimodules-permissions-interface/-/unimodules-permissions-interface-6.1.0.tgz#fd5589945e3b8fc9d2c80c52521853caea85a9ca"
+    integrity sha512-jeJx/y+Vn/Cp1/4su5XJ06UBul83MpXkYEqIOAb2jwaikhmj6tNwko7HpKy9OhfGfrhddCzwtedlro8xxZUk9A==
   
   union-value@^1.0.0:
     version "1.0.1"

@@ -33,9 +33,14 @@ function Home({ navigation }) {
   const [scanned, setScanned] = useState(false);
 
   const loadGames = async () => {
-    const response = await api.get("/games");
+    try {
+      const response = await api.get("/games");
 
-    setGames(response.data);
+      setGames(response.data);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const codeScannerPermission = async () => {
@@ -75,10 +80,14 @@ function Home({ navigation }) {
   };
 
   const handleGame = async ({ id }) => {
-    const response = await api.get(`/games/${id}`);
+    try {
+      const response = await api.get(`/games/${id}`);
 
-    //Armazenando o jogo no AsyncStorage para transferir os valores para a outra página
-    gameIn(response.data);
+      //Armazenando o jogo no AsyncStorage para transferir os valores para a outra página
+      gameIn(response.data);
+    } catch (error) {
+      console.log(error);
+    }
 
     navigation.navigate("Game");
   };
